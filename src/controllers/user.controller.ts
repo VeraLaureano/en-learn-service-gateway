@@ -93,7 +93,7 @@ export const getUser = asyncWrapper(
       if (!response.data)
         return res.status(INTERNAL_SERVER_ERROR).json({ message: 'Internal Server Error' })
       
-        // Construct a SQL query to retrieve user experience data from the database
+      // Construct a SQL query to retrieve user experience data from the database
       const query: string = `SELECT * FROM UserExperience WHERE userId = ?`
       
       connection.query(query, response.data._id, (error, results, fields) => {

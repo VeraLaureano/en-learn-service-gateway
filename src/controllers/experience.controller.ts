@@ -1,4 +1,4 @@
-import { Response, query } from "express";
+import { Response } from "express";
 import { AuthenticatedRequest } from "../interface/AuthRequest.interface";
 import { asyncWrapper } from "../utils/asyncWrapper";
 import connection from "../config/mysql";
@@ -6,6 +6,12 @@ import { CREATED, EVERYTHING_OK, INTERNAL_SERVER_ERROR, NO_CONTENT, UNAUTHORIZED
 import { UserExperience } from "../interface/UserExperience.interface";
 import { Query } from "mysql";
 
+/**
+ * Retrieves experience information via an HTTP GET request.
+ * @method [GET]
+ * @param {AuthenticatedRequest} req - Express request object with authentication details.
+ * @param {Response} res - Express response object.
+ */
 export const getExperience = asyncWrapper(
   async (req: AuthenticatedRequest, res: Response) => {
     // Check if the user is authenticated.
@@ -28,6 +34,12 @@ export const getExperience = asyncWrapper(
   }
 )
 
+/**
+ * Handles experience via an HTTP POST request.
+ * @method [POST]
+ * @param {AuthenticatedRequest} req - Express request object with authentication details.
+ * @param {Response} res - Express response object.
+ */
 export const postExperience = asyncWrapper(
   async (req: AuthenticatedRequest, res: Response) => {
     // Check if the user is authenticated.
@@ -55,6 +67,12 @@ export const postExperience = asyncWrapper(
   }
 )
 
+/**
+ * Updates experience information via an HTTP PATCH request.
+ * @method [PATCH]
+ * @param {AuthenticatedRequest} req - Express request object with authentication details.
+ * @param {Response} res - Express response object.
+ */
 export const patchExperience = asyncWrapper(
   async (req: AuthenticatedRequest, res: Response) => {
     // Check if the user is authenticated.
@@ -82,6 +100,12 @@ export const patchExperience = asyncWrapper(
   }
 )
 
+/**
+ * Deletes a user via an HTTP DELETE request.
+ * @method [DELETE]
+ * @param {AuthenticatedRequest} req - Express request object with authentication details.
+ * @param {Response} res - Express response object.
+ */
 export const deleteExperience = asyncWrapper(
   async (req: AuthenticatedRequest, res: Response) => {
     // Check if the user is authenticated.
